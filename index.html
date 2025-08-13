@@ -27,6 +27,7 @@
                     <div class="container hero-text">
                         <h1>Our Mission</h1>
                         <p>We craft journeys for hobbits, elves, gnomes, and all travel-curious folk. From glowing volcano lakes to whispering mushroom forests, our guides lead you safely there and back again.</p>
+                        <a href="#training-ground">Check your readiness</a>
                     </div>
                 </div>
             </section>
@@ -84,6 +85,30 @@
                     </div>
                 </div>
             </section>
+            <section id="training-ground">
+                <div class="section">
+                    <h2>Training ground</h2>
+                    <div class="training-ground-box container">
+                        <div class="ogre-space container">
+                            <h3>Ogre</h3>
+                            <div class="img-container"><img src="ogre.png" alt=""></div>
+                            <p><span id="healthBarOgre">250</span>/250 HP</p>
+                        </div>
+                        <div class="button-space container">
+                            <button id="rockBtn">Rock</button>
+                            <button id="paperBtn">Paper</button>
+                            <button id="scissorsBtn">Scissors</button>
+                            <button id="lizardBtn">Lizard</button>
+                            <button id="spockBtn">Rock</button>
+                        </div>
+                        <div class="player-space container">
+                            <p id="infoField">Start the fight by making your first choice!</p>
+                            <p>Your HP: <span id="healthBarPlayer">250</span>/250</p>
+                            <button id="resetBtn">Start over</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="container">
             <p>Fantasy Travels</p>
@@ -93,5 +118,6 @@
 <li>Email: info@fantasytravels.com</li>
             </ul>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>
