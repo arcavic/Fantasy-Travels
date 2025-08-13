@@ -120,7 +120,7 @@ const scissorsChoice = () => {
     return document.getElementById('infoField').textContent = `You chose scissors and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
 }
 
-document.getElementById('scissorsBtn').addEventListener('click', paperChoice);
+document.getElementById('scissorsBtn').addEventListener('click', scissorsChoice);
 
 //logic for player chooses lizard
 
@@ -202,3 +202,4 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   document.getElementById('infoField').textContent = "Battle begins!";
 
 });
+
