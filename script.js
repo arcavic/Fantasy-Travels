@@ -190,7 +190,7 @@ const spockChoice = () => {
     return document.getElementById('infoField').textContent = `You chose spock and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
 }
 
-document.getElementById('spockBtn').addEventListener('click', paperChoice);
+document.getElementById('spockBtn').addEventListener('click', spockChoice);
 
 // reset button
 
@@ -200,4 +200,5 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   document.getElementById('healthBarOgre').textContent = healthOgre;
   document.getElementById('healthBarPlayer').textContent = healthPlayer;
   document.getElementById('infoField').textContent = "Battle begins!";
+
 });
