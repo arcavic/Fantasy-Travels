@@ -341,7 +341,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     margin: 2rem 0;
 }
 
-button {
+button, a#lessGo {
     font-size: 2rem;
     padding: 0.25rem 0.5rem;
     background-color: var(--cornsilk);
@@ -350,14 +350,14 @@ button {
     margin: 0.5rem;
 }
 
-button:hover {
+button:hover, a#lessGo:hover {
     color: var(--cornsilk);
     cursor: pointer;
     background-color: var(--dark-moss-green);
     border: 2px dashed var(--cornsilk);
 }
 
-button:active {
+button:active, a#lessGo:active {
     transform: scale(0.95);
 }
 
@@ -383,6 +383,11 @@ button:active {
 
 #resetBtn {
     width: 10rem;
+    display: none;
+}
+
+#lessGo, #noThanks {
+    display: none;
 }
 
 @media only screen and (max-width: 1050px) {
