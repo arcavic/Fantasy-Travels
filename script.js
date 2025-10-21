@@ -1,4 +1,3 @@
-
 let healthOgre = Number(document.getElementById('healthBarOgre').textContent);
 
 let healthPlayer = Number(document.getElementById('healthBarPlayer').textContent);
@@ -15,6 +14,21 @@ const getComputerChoice = () => {
     return 'lizard';
   }
   return 'spock';
+}
+
+// win/lose functions
+const youWon = () => {
+  document.getElementById('healthBarOgre').textContent = '0';
+  document.getElementById('lessGo').style.display = 'block';
+  document.getElementById('noThanks').style.display = 'block';
+  document.getElementById('player-hp-indicator').style.display = 'none';
+  return document.getElementById('infoField').textContent = `Congratulations! You won! You are now ready for our adventure!`;
+}
+
+const youLose = () => {
+  document.getElementById('healthBarPlayer').textContent = '0';
+  document.getElementById('resetBtn').style.display = 'block';
+  return document.getElementById('infoField').textContent = `Sorry! You lost. Train some more and maybe you will succeed!`;
 }
 
 //logic for player chooses rock
@@ -35,16 +49,16 @@ const rockChoice = () => {
   } else if ((comChoice === 'lizard' || (comChoice === 'scissors'))) {
     healthOgre = healthOgre - dmg;
     if (healthOgre < 1) {
-      document.getElementById('healthBarOgre').textContent = '0';
-      return document.getElementById('infoField').textContent = `Congratulations! You won! You are now ready for our adventure!`;
+      youWon();
+      return;
     }
     document.getElementById('healthBarOgre').textContent = String(healthOgre);
     return document.getElementById('infoField').textContent = `You chose rock and Ogre chose ${comChoice}. You deal ${dmg} damage!`;
   }
   healthPlayer = healthPlayer - dmg;
   if (healthPlayer < 1) {
-      document.getElementById('healthBarPlayer').textContent = '0';
-      return document.getElementById('infoField').textContent = `Sorry! You lost. Train some more and maybe you will succeed!`;
+      youLose();
+      return;
     }
   document.getElementById('healthBarPlayer').textContent = String(healthPlayer);
     return document.getElementById('infoField').textContent = `You chose rock and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
@@ -70,16 +84,16 @@ const paperChoice = () => {
   } else if ((comChoice === 'rock' || (comChoice === 'spock'))) {
     healthOgre = healthOgre - dmg;
     if (healthOgre < 1) {
-      document.getElementById('healthBarOgre').textContent = '0';
-      return document.getElementById('infoField').textContent = `Congratulations! You won! You are now ready for our adventure!`;
+      youWon();
+      return;
     }
     document.getElementById('healthBarOgre').textContent = String(healthOgre);
     return document.getElementById('infoField').textContent = `You chose paper and Ogre chose ${comChoice}. You deal ${dmg} damage!`;
   }
   healthPlayer = healthPlayer - dmg;
   if (healthPlayer < 1) {
-      document.getElementById('healthBarPlayer').textContent = '0';
-      return document.getElementById('infoField').textContent = `Sorry! You lost. Train some more and maybe you will succeed!`;
+      youLose();
+      return;
     }
   document.getElementById('healthBarPlayer').textContent = String(healthPlayer);
     return document.getElementById('infoField').textContent = `You chose paper and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
@@ -105,16 +119,16 @@ const scissorsChoice = () => {
   } else if ((comChoice === 'paper' || (comChoice === 'lizard'))) {
     healthOgre = healthOgre - dmg;
     if (healthOgre < 1) {
-      document.getElementById('healthBarOgre').textContent = '0';
-      return document.getElementById('infoField').textContent = `Congratulations! You won! You are now ready for our adventure!`;
+      youWon();
+      return;
     }
     document.getElementById('healthBarOgre').textContent = String(healthOgre);
     return document.getElementById('infoField').textContent = `You chose scissors and Ogre chose ${comChoice}. You deal ${dmg} damage!`;
   }
   healthPlayer = healthPlayer - dmg;
   if (healthPlayer < 1) {
-      document.getElementById('healthBarPlayer').textContent = '0';
-      return document.getElementById('infoField').textContent = `Sorry! You lost. Train some more and maybe you will succeed!`;
+      youLose();
+      return;
     }
   document.getElementById('healthBarPlayer').textContent = String(healthPlayer);
     return document.getElementById('infoField').textContent = `You chose scissors and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
@@ -140,16 +154,16 @@ const lizardChoice = () => {
   } else if ((comChoice === 'spock' || (comChoice === 'paper'))) {
     healthOgre = healthOgre - dmg;
     if (healthOgre < 1) {
-      document.getElementById('healthBarOgre').textContent = '0';
-      return document.getElementById('infoField').textContent = `Congratulations! You won! You are now ready for our adventure!`;
+      youWon();
+      return;
     }
     document.getElementById('healthBarOgre').textContent = String(healthOgre);
     return document.getElementById('infoField').textContent = `You chose lizard and Ogre chose ${comChoice}. You deal ${dmg} damage!`;
   }
   healthPlayer = healthPlayer - dmg;
   if (healthPlayer < 1) {
-      document.getElementById('healthBarPlayer').textContent = '0';
-      return document.getElementById('infoField').textContent = `Sorry! You lost. Train some more and maybe you will succeed!`;
+      youLose();
+      return;
     }
   document.getElementById('healthBarPlayer').textContent = String(healthPlayer);
     return document.getElementById('infoField').textContent = `You chose lizard and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
@@ -175,16 +189,16 @@ const spockChoice = () => {
   } else if ((comChoice === 'scissors' || (comChoice === 'rock'))) {
     healthOgre = healthOgre - dmg;
     if (healthOgre < 1) {
-      document.getElementById('healthBarOgre').textContent = '0';
-      return document.getElementById('infoField').textContent = `Congratulations! You won! You are now ready for our adventure!`;
+      youWon();
+      return;
     }
     document.getElementById('healthBarOgre').textContent = String(healthOgre);
     return document.getElementById('infoField').textContent = `You chose spock and Ogre chose ${comChoice}. You deal ${dmg} damage!`;
   }
   healthPlayer = healthPlayer - dmg;
   if (healthPlayer < 1) {
-      document.getElementById('healthBarPlayer').textContent = '0';
-      return document.getElementById('infoField').textContent = `Sorry! You lost. Train some more and maybe you will succeed!`;
+      youLose();
+      return;
     }
   document.getElementById('healthBarPlayer').textContent = String(healthPlayer);
     return document.getElementById('infoField').textContent = `You chose spock and Ogre chose ${comChoice}. Ogre deals ${dmg} damage!`; 
@@ -200,6 +214,19 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   document.getElementById('healthBarOgre').textContent = healthOgre;
   document.getElementById('healthBarPlayer').textContent = healthPlayer;
   document.getElementById('infoField').textContent = "Battle begins!";
-
+  document.getElementById('player-hp-indicator').style.display = 'block';
+  document.getElementById('resetBtn').style.display = 'none';
 });
+
+document.getElementById('noThanks').addEventListener('click', () => {
+  healthOgre = 250;
+  healthPlayer = 250;
+  document.getElementById('healthBarOgre').textContent = healthOgre;
+  document.getElementById('healthBarPlayer').textContent = healthPlayer;
+  document.getElementById('infoField').textContent = "Battle begins!";
+  document.getElementById('player-hp-indicator').style.display = 'block';
+  document.getElementById('noThanks').style.display = 'none';
+  document.getElementById('lessGo').style.display = 'none';
+});
+
 
